@@ -1,2 +1,5 @@
-# househustles
-Official Repository for the HouseHustles.com website
+# HouseHustles
+Welcome to the Official Repository for the HouseHustles.com Website!
+
+Quentrum 2019 
+
