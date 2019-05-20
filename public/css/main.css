@@ -1,1 +1,91 @@
 /** HouseHustles 2019 **/
+
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+  font-family: 'Nunito', sans-serif;
+	font-size: 100%;
+	vertical-align: baseline;
+  background: transparent;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+a{
+  text-decoration: none;
+}
+
+/** Main Hero including banner image **/
+#hero{
+ width: -webkit-fill-available;
+ height:  -webkit-fill-available;
+ background: white;
+ background-image: url('../img/hero-image.png');
+ background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
+ filter: blur(10px);
+}
+
+#hero-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+
+/** Contains the options boxes **/
+#mid-section{
+  display: inline-flex;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.option-box{
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 35px 10px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.option-box-title{
+  font-size: 25px;
+  text-align: center;
+}
+
+.option-box-icon{
+  font-size: 75px;
+  text-align: center;
+  margin-top: 10px;
+  color: #0055cc;
+}
+
+.option-box-desc{
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+#separatorToBlue{
+  border-bottom: 75px solid #0055cc;
+  border-left: 0px solid transparent;
+  border-right: 1500px solid transparent;
+  height: 0;
+  width: 100px;
+  overflow: hidden;
+}
+
+#helping-hand{
+position: absolute;
+font-size: 100px;
+margin-left: 5%;
+margin-top: 70px;
+}
+
+.question-li{
+ margin-top: 15px;
+ text-align: center;
+}
