@@ -89,3 +89,22 @@ margin-top: 70px;
  margin-top: 15px;
  text-align: center;
 }
+
+/*The stats in the about section */
+.stats{
+	display: inline-flex;
+	margin-left: 20px;
+	justify-content: space-between;
+	margin-top: 50px;
+	margin-bottom:50px;
+}
+
+.small-stats{
+	width: 30%;
+	text-align: CENTER;
+}
+
+.big-number{
+	font-size: 100px;
+	-webkit-font-smoothing: antialiased;
+}
