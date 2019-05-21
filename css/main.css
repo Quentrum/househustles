@@ -108,3 +108,35 @@ margin-top: 70px;
 	font-size: 100px;
 	-webkit-font-smoothing: antialiased;
 }
+
+/** Testimonial Section **/
+#separatorToWhite{
+	border-bottom: 45px solid #0055cc;
+  border-left: 0px solid transparent;
+  border-right: 1500px solid transparent;
+  height: 0;
+  width: 100px;
+  overflow: hidden;
+	color: blue;
+	transform: rotateZ(180deg);
+}
+
+#footer{
+	height: 50vh;
+	background: #eee;
+	background-image: linear-gradient(#fff, #b7b7b7b7);
+	color: #0044cc8f;
+}
+
+#social-media{
+	display: inline-flex;
+	width: 50%;
+	justify-content: space-evenly;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	margin-top: 30px;
+}
+
+.fab{
+font-size: 100px;
+}
