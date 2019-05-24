@@ -42,6 +42,7 @@ a{
   margin-top: 30px;
   margin-left: 20px;
   margin-right: 20px;
+	overflow: hidden;
 }
 
 .option-box{
@@ -50,6 +51,12 @@ a{
   padding: 35px 10px;
   border-radius: 3px;
   text-align: center;
+	transition: transform 0.5s ease-in-out;
+}
+
+.option-box:hover{
+ cursor: pointer;
+ transform:scale(1.1);
 }
 
 .option-box-title{
@@ -72,7 +79,7 @@ a{
 #separatorToBlue{
   border-bottom: 75px solid #0055cc;
   border-left: 0px solid transparent;
-  border-right: 1500px solid transparent;
+  border-right: 2500px solid transparent;
   height: 0;
   width: 100px;
   overflow: hidden;
@@ -97,6 +104,8 @@ margin-top: 70px;
 	justify-content: space-between;
 	margin-top: 50px;
 	margin-bottom:50px;
+	margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .small-stats{
@@ -113,7 +122,7 @@ margin-top: 70px;
 #separatorToWhite{
 	border-bottom: 45px solid #0055cc;
   border-left: 0px solid transparent;
-  border-right: 1500px solid transparent;
+  border-right: 2500px solid transparent;
   height: 0;
   width: 100px;
   overflow: hidden;
@@ -124,8 +133,8 @@ margin-top: 70px;
 #footer{
 	height: 50vh;
 	background: #eee;
-	background-image: linear-gradient(#fff, #b7b7b7b7);
-	color: #0044cc8f;
+	background-image: linear-gradient(#fff, #b7b7b740);
+	color: #0055cc8f;
 }
 
 #social-media{
@@ -139,4 +148,61 @@ margin-top: 70px;
 
 .fab{
 font-size: 100px;
+}
+
+/**OPTION BOX SELECT **/
+.optionLightBox{
+	    border: 0.5px solid black;
+	    border-radius: 3px;
+	    padding: 10px;
+	    width: 60%;
+	    margin-left: 50%;
+	    transform: translateX(-50%);
+			padding: 10px 30px;
+}
+
+.form-label{
+	font-size: 20px;
+	color: #0055cc;
+	font-weight: 100;
+	margin-top: 15px;
+}
+
+.small-label{
+ font-size: 20px;
+}
+
+#order-desc{
+	resize: false;
+}
+
+#submitOrder{
+	padding: 5px 10px;
+	border-radius: 3px;
+	border-color: #0055ccc9;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background: #0055ccc9;
+	color: white;
+}
+
+input{
+	border: 1px solid #BBB;
+	border-radius: 1px;
+	font-size: 20px;
+}
+
+textarea{
+	border: 0.5px solid #BBB;
+	resize: unset;
+	width: 50%;
+	height: 150px;
+	font-size: 18px;
+}
+
+select{
+	border: 0.5px solid #BBB;
+	font-size: 20px;
 }
