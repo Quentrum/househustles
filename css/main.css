@@ -17,7 +17,7 @@ a{
 }
 
 #cover-layer{
-	
+
 }
 
 /** Main Hero including banner image **/
@@ -163,6 +163,7 @@ font-size: 100px;
 	    margin-left: 50%;
 	    transform: translateX(-50%);
 			padding: 10px 30px;
+			transition: width 2s;
 }
 
 .form-label{
@@ -192,7 +193,12 @@ font-size: 100px;
 	color: white;
 }
 
-#cancelLink:hover{
+#submitOrder:hover{
+	cursor: pointer;
+	background: #0055ccd9
+}
+
+#cancelLink:hover, #cancelLink2:hover{
 	text-decoration: underline;
 	cursor: pointer;
 }
@@ -223,4 +229,24 @@ textarea{
 select{
 	border: 0.5px solid #BBB;
 	font-size: 20px;
+}
+
+/**KEY FRAMES **/
+
+.fade-in{
+ animation: fade-in 0.5s normal forwards  cubic-bezier(0.1, -0.6, 0.2, 0);
+}
+
+.fade-out{
+	animation: fade-out 0.5s normal forwards  cubic-bezier(0.1, -0.6, 0.2, 0);
+}
+
+@keyframes fade-in {
+	0%   {  width: 0px; height: 0px;  opacity:0;   }
+	100%  { width: 60%; height: auto;  opacity: 1; }
+}
+
+@keyframes fade-out {
+	0%  {  opacity: 1; width: 60%; height: auto; }
+	100%   { opacity:0; width: 0px; height: 0px;   }
 }
