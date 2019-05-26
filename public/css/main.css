@@ -16,6 +16,10 @@ a{
   text-decoration: none;
 }
 
+#cover-layer{
+
+}
+
 /** Main Hero including banner image **/
 #hero{
  width: -webkit-fill-available;
@@ -42,6 +46,7 @@ a{
   margin-top: 30px;
   margin-left: 20px;
   margin-right: 20px;
+	overflow: hidden;
 }
 
 .option-box{
@@ -50,6 +55,12 @@ a{
   padding: 35px 10px;
   border-radius: 3px;
   text-align: center;
+	transition: transform 0.5s ease-in-out;
+}
+
+.option-box:hover{
+ cursor: pointer;
+ transform:scale(1.1);
 }
 
 .option-box-title{
@@ -72,7 +83,7 @@ a{
 #separatorToBlue{
   border-bottom: 75px solid #0055cc;
   border-left: 0px solid transparent;
-  border-right: 1500px solid transparent;
+  border-right: 2500px solid transparent;
   height: 0;
   width: 100px;
   overflow: hidden;
@@ -88,4 +99,154 @@ margin-top: 70px;
 .question-li{
  margin-top: 15px;
  text-align: center;
+}
+
+/*The stats in the about section */
+.stats{
+	display: inline-flex;
+	margin-left: 20px;
+	justify-content: space-between;
+	margin-top: 50px;
+	margin-bottom:50px;
+	margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.small-stats{
+	width: 30%;
+	text-align: CENTER;
+}
+
+.big-number{
+	font-size: 100px;
+	-webkit-font-smoothing: antialiased;
+}
+
+/** Testimonial Section **/
+#separatorToWhite{
+	border-bottom: 45px solid #0055cc;
+  border-left: 0px solid transparent;
+  border-right: 2500px solid transparent;
+  height: 0;
+  width: 100px;
+  overflow: hidden;
+	color: blue;
+	transform: rotateZ(180deg);
+}
+
+#footer{
+	height: 50vh;
+	background: #eee;
+	background-image: linear-gradient(#fff, #b7b7b740);
+	color: #0055cc8f;
+}
+
+#social-media{
+	display: inline-flex;
+	width: 50%;
+	justify-content: space-evenly;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	margin-top: 30px;
+}
+
+.fab{
+font-size: 100px;
+}
+
+/**OPTION BOX SELECT **/
+.optionLightBox{
+	    border: 0.5px solid black;
+	    border-radius: 3px;
+	    padding: 10px;
+	    width: 60%;
+	    margin-left: 50%;
+	    transform: translateX(-50%);
+			padding: 10px 30px;
+			transition: width 2s;
+}
+
+.form-label{
+	font-size: 20px;
+	color: #0055cc;
+	font-weight: 100;
+	margin-top: 15px;
+}
+
+.small-label{
+ font-size: 20px;
+}
+
+#order-desc{
+	resize: false;
+}
+
+#submitOrder{
+	padding: 5px 10px;
+	border-radius: 3px;
+	border-color: #0055ccc9;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background: #0055ccc9;
+	color: white;
+}
+
+#submitOrder:hover{
+	cursor: pointer;
+	background: #0055ccd9
+}
+
+#cancelLink:hover, #cancelLink2:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.form-div{
+	margin-top: 20px;
+}
+
+input{
+	border: 1px solid #BBB;
+	border-radius: 1px;
+	font-size: 20px;
+	padding: 3px;
+}
+
+textarea{
+	border: 0.5px solid #BBB;
+	resize: unset;
+	width: 50%;
+	height: 150px;
+	font-size: 18px;
+	margin-top: 10px;
+	margin-left: 50%;
+  transform: translateX(-50%);
+  padding: 3px;
+}
+
+select{
+	border: 0.5px solid #BBB;
+	font-size: 20px;
+}
+
+/**KEY FRAMES **/
+
+.fade-in{
+ animation: fade-in 0.5s normal forwards  cubic-bezier(0.1, -0.6, 0.2, 0);
+}
+
+.fade-out{
+	animation: fade-out 0.5s normal forwards  cubic-bezier(0.1, -0.6, 0.2, 0);
+}
+
+@keyframes fade-in {
+	0%   {  width: 0px; height: 0px;  opacity:0;   }
+	100%  { width: 60%; height: auto;  opacity: 1; }
+}
+
+@keyframes fade-out {
+	0%  {  opacity: 1; width: 60%; height: auto; }
+	100%   { opacity:0; width: 0px; height: 0px;   }
 }
