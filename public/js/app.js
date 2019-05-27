@@ -93,4 +93,41 @@ $(document).ready(function(){
     });
   }
 
+ function displayTestimonials(index){
+
+     var customers = ["Aishwarya", "Tyler"];
+     var testimonials = ["HouseHustles is a life saver!! They've helped me out when I was stranded in the housing process. They work really fast, all I had to do was tell them my requirements, and in less than six hours, they'd mailed me a detailed list. What makes their service special is the comments regarding each listing, which shows that they really looked into each of them and given a clear idea of what each one entails. Overall I am happy with their service and hope the best fo them!!",  "HouseHustles made looking for housing a breeze and so simple! I would recommend this to any student or busy individual!"];
+     //iterate through
+       $("#testimonial").html(testimonials[index]);
+       $("#author").html("by "+customers[index]);
+
+   } //end of displayTestimonials function
+
+   displayTestimonials(0);
+
+  //count up function
+  $(window).scroll(function (event) {
+    var scroll = $("#aboutSection").scrollTop();
+    $('.big-number').each(function() {
+    var $this = $(this),
+        countTo = $this.attr('data-count');
+      $({ countNum: $this.text()}).animate({
+        countNum: countTo
+      },
+      {
+        duration: 2000,
+        easing:'linear',
+        step: function() {
+          $this.text(Math.floor(this.countNum));
+        },
+        complete: function() {
+          $this.text(this.countNum);
+          //alert('finished');
+        }
+      });
+    });
+  }); //end of count up
+
+
+
 }); //end of DOCUMENT READY

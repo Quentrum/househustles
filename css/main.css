@@ -14,10 +14,7 @@
 
 a{
   text-decoration: none;
-}
-
-#cover-layer{
-
+	color: inherit;
 }
 
 /** Main Hero including banner image **/
@@ -118,8 +115,16 @@ margin-top: 70px;
 }
 
 .big-number{
-	font-size: 100px;
+	font-size: 80px;
 	-webkit-font-smoothing: antialiased;
+}
+
+#onehundredpercent::after{
+	content: "%";
+}
+
+#adddollar::before{
+	content: "$";
 }
 
 /** Testimonial Section **/
@@ -152,6 +157,13 @@ margin-top: 70px;
 
 .fab{
 font-size: 100px;
+transition: color 0.7s;
+transition: transform: 0.7s; 
+}
+
+.fab:hover{
+	color:#0055cc;
+	transform: scale(1.01);
 }
 
 /**OPTION BOX SELECT **/
