@@ -3,103 +3,158 @@
 <head>
   <!--META TAGS -->
   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-  <meta name="keywords" content="househustles, house, search, college, university">
+  <meta name="keywords" content="househustles,real estate, real estate agent, real estate broker, realtor, business branding, real estate business branding">
   <meta name="author" content="HouseHustles">
-  <meta name="description" content = "At college and need a house, but don't know where to start? Come to us! We use our wide housing information resources to help you get started on finding a house that suits your needs. Get started now, for free!">
+  <meta name="description" content = "Building your business in real estate and need content to match your dedication to hard work and professionalism? Schedule an interview today so we can get started on branding your business!">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> HouseHustles | College Housing. Stress Free. </title>
+  <title> HouseHustles | Real Estate Business Branding. </title>
   <!--ADDED IN JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"></script>
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  <script src="https://momentjs.com/downloads/moment-timezone-with-data.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+
   <script src = "js/app.js"></script>
+
+  <script>
+   $(function() {
+      //date picker
+      $("#datepicker").datepicker();
+      $('input.timepicker').timepicker({});
+     }); //end of jquery
+  </script>
+
+
   <!-- ADDED IN CSS -->
   <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
   <link rel = "stylesheet" href = "css/main.css">
 </head>
 <body>
   <div id = "hero"></div>
   <div id = "hero-text">
     <h1 style = "font-size: 6vw; color: #0055cc; letter-spacing: 3.0px"> HouseHustles </h1>
-    <h2 style = "text-transform: uppercase; letter-spacing: 3.5px; font-size: 2.0vw;"> College Housing. Stress Free. </h2>
+    <h2 style = "text-transform: uppercase; letter-spacing: 3.5px; font-size: 2.0vw;"> Real Estate Business Branding </h2>
   </div>
   <a id = "scrollToMainLink" href = #scrollTo></a> <!--SCROLL TO THIS ON SCROLL -->
   <h1 style = "font-size: 2vw; font-weight: 200; text-align: center; margin-top: 50px;"> Welcome! Get started by choosing an option below: </h1>
   <div id = "mid-section">
     <div class = "option-box" id="option1">
-      <p class = "option-box-title">Find Me Listings</p>
+      <p class = "option-box-title">Brand my Business</p>
       <div class = "option-box-icon"> <i class="fas fa-file-alt"></i></div>
-      <p class = "option-box-desc">All you have to do is let us know what you're looking for, and we'll send you a report with the best listings we found for you!</p>
+      <p class = "option-box-desc">From website design and development, to graphic design, to social media growth. We do it all to solidify your online presence.</p>
     </div>
     <div class = "option-box" id="option2">
-      <p class = "option-box-title">House Scout for Me</p>
+      <p class = "option-box-title">Become a HouseHustles Business Partner</p>
       <div class = "option-box-icon"><i class="fas fa-home"></i></div>
-      <p class = "option-box-desc">All you have to do is let us know what you're looking for, and we'll send you a report with the best listings we found for you!</p>
+      <p class = "option-box-desc">Have branding experience and would love to gain more high profile clients? Let's talk!</p>
     </div>
   </div> <!--END OF MID SECTION -->
-  <div class = "optionLightBox" id = "optionLightBox1">
+  <div style=" opacity: 0; width: 0px; height: 0px;" class = "optionLightBox" id = "optionLightBox1">
      <form id="newOrder">
-      <h1 style = "text-align: center; font-size: 30px; margin-top: 10px;">Let's help you Find Some Listings!</h1> <br>
+      <h1 style = "text-align: center; font-size: 30px; margin-top: 10px; font-weight:100;">Let's help you brand your Real Estate Business!</h1> <br>
       <p style="display:none;"> Questions containing "*" indicate a required field </p> <br>
-      <div>
-         <label class = "form-label">Name: </label> <br>
-         <input id = "order-name" name = "order-name" type = "text" value="">
+      <p id= "cancelLink" style="color: #777; position: absolute; right: 10%; bottom: 30px;"> Cancel </p>
+      <div class = "form-div" id="form-name-email" style="display: inline-flex; width: -webkit-fill-available; justify-content: space-between; margin-bottom:20px;">
+        <div>
+           <label class = "form-label">Name: </label> <br>
+           <input id = "order-name" name = "order-name" type = "text" value="" size="30">
+        </div>
+        <div>
+           <label class = "form-label">Email: </label> <br>
+           <input id = "order-email" name = "order-email" type="email" size="40">
+        </div>
       </div>
       <div>
-         <label class = "form-label">Email: </label> <br>
-         <input id = "order-email" name = "order-email" type="email">
-      </div>
-      <div>
-         <label class = "form-label"> Choose some options so that we can get an idea of what you're looking for: </label>
-         <div>
-           <label class = "small-label"> Bedroom Type </label> <br>
-           <select id = "room-type-select" name = "room-type-select">
-             <option value = "singlebdr"> Single / Your Own Bedroom </option>
-             <option value = "double">    Double / Two Person Bedroom </option>
-             <option value = "triple">    Triple / Three Person Bedroom </option>
-             <option value = "quad">      Quad or More / Four Person or  more Bedroom </option>
-             <option value = "studio">    Studio Apartment </option>
+         <label class = "form-label"> Let's set up an introductory meeting! </label>
+         <p>
+           We value introductory meetings with our clients, so we can establish a genuine connection with them. By meeting with you, we get to better understand your needs, and perform our service to the best of our abilities.
+         </p>
+         <div class = "form-div" style="margin-top:5px;">
+           <label class = "small-label"> What is the best way to contact you? </label> <br>
+           <p> Please specify anything like phone numbers, usernames for social media, or links for Zoom calls if necessary, below. </p>
+           <select id = "contact-type-select" name = "contact-type-select">
+             <option value = "any" selected="selected"> Email </option>
+             <option value = "socmed"> Social Media (Instagram / Twitter)</option>
+             <option value = "teleph"> Telephone  </option>
+             <option value = "zomsky"> Zoom Call / Skype Call </option>
            </select>
          </div>
-         <div>
-           <label class = "small-label"> Is this the only Bedroom in the House? </label> <br>
-           <select id = "room-type-select-yn" name = "room-type-select-yn">
-             <option value = "dontmatter" selected="selected"> Doesn't Matter </option>
-             <option value = "yes">Yes</option>
-             <option value = "no">No</option>
-           </select>
+         <div class = "form-div">
+           <label class = "small-label"> What day would you like to schedule a meeting? </label> <br>
+           <input type="text" id="datepicker">
          </div>
-         <div>
-           <label class = "small-label"> What's your price range? </label> <br>
-           <input id = "min" name = "min" type = "text" maxlength="5"> - <input id = "max" name = "max" type = "text" maxlength="5">
+         <div class = "form-div">
+           <label class = "small-label"> What time are you available to be called on that day? </label> <br> <br>
+              <input class="timepicker" placeholder="Choose a Time"> <br> <br>
+              <p> Also choose your timezone: <br>  <select class="js-Selector"></select> </p>
          </div>
       </div>
-      <div>
-         <label class = "form-label">Here, tell us more about what you're looking for: </label> <br>
-         <p> Note: We automatically search for <b>options closest to campus</b>, and will take into account <b>everything you mentioned above</b>. <br> Here you can describe
-             preferences such as: <i> Would like to be close to the Beach, Pet Friendly vs. No Pets, Utilities Included, Should have Parking Spaces, and etc. </i>
+      <div class = "form-div">
+         <label class = "form-label">Here, tell us more about how we can contact you: </label> <br>
+         <p> Include information here such as <b>Zoom call links</b>, your <b>username</b> if you are to be contacted through social media, or <b>other important
+            information</b> that will help us contact you.
          </p>
          <textarea id = "order-desc" name = "order-descp"></textarea>
       </div>
-      <input id = "submitOrder" type = "button" value = "Finished">
+      <button id = "submitOrder" type = "submit">Finished</button>
     </form>
-  </div>
+  </div> <!--END OF OPTION LIGHT BOX -->
+
+  <!-- START OF NEW LIGHT BOX -->
+
+  <div style=" opacity: 0; width: 0px; height: 0px;" class = "optionLightBox" id = "optionLightBox2">
+    <p style="text-align: CENTER; "> This service is not currently available for online order. Please <a href="mailto:househustles@gmail.com?subject= Real Estate Query" style="color: blue;"> Contact </a> us to schedule your order! </p>
+    <p id= "cancelLink2" style="color: #777; position: absolute; right: 5%; bottom: 10px;"> Cancel </p>
+  </div> <!--END OF OPTION LIGHT BOX -->
+
+
   <p style = "margin-bottom: 50px; margin-top: 50px; text-align: CENTER; ">
-     <b> Have any questions or comments? </b> Contact us <a href="mailto:househustles@gmail.com">here!</a>
+     <b> Have any questions or comments? </b> Contact us <a href="mailto:househustles@gmail.com?subject= Customer Service Question from HouseHustles.com" style="color: blue;">here!</a>
   </p>
   <div id = "separatorToBlue"></div>
   <div id = "aboutSection" style="background: #0055cc; color:white;">
       <h1 style ="font-size: 35px; margin-left: 30px;"> The Mission </h1>
-      <p style="text-align: CENTER; font-size: 20px; margin-top:20px; line-height: 45px;">We know that finding housing as a student in college can be hard sometimes, and we want to help with that. <br>
-         By providing <i> quality </i> and <i> dependable </i> service, our team helps you save <b> time </b> and even <b> money </b> when it comes down to your house search. <br>
+      <p style="text-align: CENTER; font-size: 20px; margin-top:20px; line-height: 45px;">We know that branding your new Real Estate business can be lengthy and overpriced, so we want to help with that. <br>
+         By providing <i> quality </i> and <i> dependable </i> service, our team helps you save <b> time </b> and even <b> money </b> when it comes down to making a brand around your company. <br>
       </p>
       <div id = "helping-hand"><i class="fas fa-hands-helping"></i> </div>
       <p style="text-align: CENTER; font-size: 30px; margin-top: 30px; font-weight: 100;"> Any of these apply to you? </p>
       <ul style=" margin-left: 50%; transform: translateX(-50%);">
-        <li class = 'question-li'>You're too busy to waste time searching through a whole bunch of listings</li>
-        <li class = 'question-li'>You need a place fast, but you're not sure if you'll end up finding one </li>
-        <li class = 'question-li'>You found a place that you don't like, but you don't want to look around again </li>
+        <li class = 'question-li'>You're too busy to waste time finding a whole bunch of freelancers to do branding work</li>
+        <li class = 'question-li'>You want professional quality work, but because your money is going into your portfolio, you don't want to spend insane amounts on branding. </li>
+        <li class = 'question-li'>You branded once, but are in need of a 2019 inspired upgrade </li>
       </ul>
       <p style="text-align: center; margin-top: 50px; font-size: 25px; margin-bottom: 50px;"> <b> Don't worry, we've got your back. </b> </p>
-  </div>
+
+  </div> <!--END OF ABOUT SECTION -->
+  <div id = "separatorToWhite"></div>
+  <div id = "testimonialSection">
+    <h1 style = "font-size: 30px; margin-left: 30px; color: #222; padding-top: 30px; "> Who am I working with? </h1>
+   <div class = "testimonial-div">
+     <div id = "comments-icon" style = "color: #0055cc; font-size: 100px; position: absolute; right: 100px; margin-top: 45px; right:15%;"><i class="fas fa-comments"></i></div>
+     <p id="testimonial" style = "margin: 40px 30% 20px 10%;; font-size: 20px; font-style: italic; text-align: center;">
+       You are working with a team of motivated and dedicated individuals. A team comprised on individuals building and growing their own individual businesses, you can be sure
+       that the work that you receive will be of tested, checked, and high quality work. The key ingredient is <b>passion</b> and there is a lot of that here at HouseHustles.
+
+     </p>
+   </div>
+  </div> <!--END OF TESTIMONIAL SECTION -->
+  <div id = "footer">
+   <p style="text-align: CENTER; margin-top: 10%; font-size: 25px; "> Connect with the HouseHustles team! </p>
+   <div id = "social-media">
+     <a href = "https://www.facebook.com/househustles/"><i class="fab fa-facebook-square"></i></a>
+     <a href = "https://www.instagram.com/househustles"><i class="fab fa-instagram"></i></a>
+     <a href = "https://www.twitter.com/househustles"><i class="fab fa-twitter-square"></i></a>
+   </div>
+  </div> <!--END OF FOOTER -->
 </body>
 </html>
